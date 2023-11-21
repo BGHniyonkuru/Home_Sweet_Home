@@ -1,0 +1,152 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+	background-image: url("../Images/Background.jpg");
+	background-size: cover;
+    color:#e6e6e6
+}
+
+header {
+	background-color: #e6e6e6;
+	padding: 0px;
+}
+
+nav {
+	background-color: #f2f2f2;
+	padding: 10px; 
+}
+
+nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+nav li {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+nav a {
+	display: block;
+	padding: 10px;
+	color: #333;
+	text-decoration: none;
+}
+
+nav a:hover {
+	background-color: #333;
+	color: #fff;
+}
+
+main {
+	padding: 20px;
+}
+
+section {
+	margin-bottom: 20px;
+}
+
+h2 {
+	font-size: 28px;
+	margin-top: 0;
+}
+
+
+.groupeX {
+	border: 2px solid #333;
+	padding: 10px;
+	margin-bottom: 20px;
+	background-image:url("../Images/Background.jpg");
+	font-size: 20px;
+}
+
+.groupeX h1{
+    color:#F0C07A;
+    background-color: #333;
+}
+
+.groupeX p{
+    font-family:serif ;
+    font-size:20px;
+    margin-top:50px;
+    color:white; 
+}
+
+.groupeX h2{ 
+    font-size:30px;
+    margin-right: 600px;
+    color:orange; 
+}
+
+.groupeX h3{
+	color:orange;
+    font-size:20px;
+    background-color: #17202A;
+    margin-right:800px;
+}
+
+.groupeXY{
+    border: 2px solid #333;
+	padding: 10px;
+	margin-bottom: 20px;
+	background-image:url("../Images/Background.jpg");
+	font-size: 20px;; 
+}
+
+.groupeXY h2{
+	color:aqua;
+	margin-left: 30px;
+	}
+
+.groupeXY p{
+	margin-left: 20px;
+	font-size:2Opx;
+    color:#F0C07A;
+    background-color: #333
+}
+
+.groupeXY h1{
+	color:#F0C07A;
+    background-color: #333;
+}
+
+.contact{
+    border: 2px solid #333;
+	padding: 10px;
+	margin-bottom: 20px;
+	background-image:url("../Images/Background.jpg");
+	font-size: 20px; 
+}
+
+.contact h2 {
+    background: size 0em;
+}
+
+.contact p{
+	margin-left: 20px;
+	font-size:17px;
+    color:white;
+}
+
+.contact h1{
+	color:#F0C07A;
+    background-color: #333;
+}
+
+.contact h3{
+	color:orange;
+    font-size:20px;
+    background-color: #17202A;
+    margin-right:800px;
+}
+
+table{
+	border-collapse: collapse;
+}
+
+tr{
+	border: 1px solid wheat;
+	padding: 10px;
+}
