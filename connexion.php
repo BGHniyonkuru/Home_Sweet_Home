@@ -1,5 +1,5 @@
 <?php
-session_start();
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -8,11 +8,11 @@ session_start();
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>New client survey</title>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
         <link rel="stylesheet" type="text/css" href="./Style/style.css">
-        
     </head>
 
-    <body class="groupeX">
+    <body class="header">
         <h1>Home Sweet Home - Log in</h1>
 
         <header>
@@ -23,20 +23,41 @@ session_start();
                     <li><a href="./Contact/contact.html">Contact</a></li>
                 </ul>
             </nav>
-    </header>
+        </header>
 
-    <form method="post" action="./connecter.php">
+        <form id="loginForm">
+            E-mail : <input type="text" id="mail" name="mail" value="" required><br />
+            Password : <input type="password" id="mdp1" name="mdp1" value="" required><br />
+            <input type="button" id="loginButton" value="Log in"><br />
+        </form>
 
-            E-mail : <INPUT type="text" name="mail" value="" required><br />
-            
-            Password : <INPUT type="text" name="mdp" value="" required><br />
+        <script>
+            $(document).ready(function(){
+                $("#loginButton").on("click", function(){
+                    var  login={
+                                        mailc: $('#mail').val(),
+                                        mdp1c: $('#mdp1').val(),
+                                    };
+                    $.ajax({
+                        type: "POST",
+                        url: "connecter.php",
+                        data: login,
+                        dataType: 'json',
+                        success: function(response){
+                            console.log(response);
 
-            <INPUT type="submit" value="Log in"><br />
-
-    </form>
-
-    
-
+                            if (response.success){
+                                window.location.href = "index.php";
+                            } else {
+                                alert("Login failed. " + response.message);
+                            }
+                        },
+                        error: function(error){
+                            console.error("AJAX request failed:", error);
+                        }
+                    });
+                });
+            });
+        </script>
     </body>
-
 </html>

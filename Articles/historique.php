@@ -42,3 +42,25 @@ if (isset($_SESSION['client'])) {
     echo "Veuillez vous connecter pour voir l'historique de vos commandes.";
 }
 ?>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Order</title>
+        <link rel="stylesheet" type="text/css" href="../Style/style.css">
+        
+    </head>
+
+    <body class="header">
+        <h1>Home Sweet Home - History</h1>
+
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="../index.php">Homepage</a></li>
+                    <li><a href="./panier.php">Basket</a></li>
+                    <li><a href="../Contact/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+    </header>

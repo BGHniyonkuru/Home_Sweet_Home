@@ -54,62 +54,37 @@ h2 {
 }
 
 
-.groupeX {
+.header {
 	border: 2px solid #333;
 	padding: 10px;
 	margin-bottom: 20px;
 	background-image:url("../Images/Background.jpg");
 	font-size: 20px;
+	
 }
 
-.groupeX h1{
+.header h1{
     color:#F0C07A;
     background-color: #333;
 }
 
-.groupeX p{
-    font-family:serif ;
+.header p{
+	margin-left: 20px;
     font-size:20px;
-    margin-top:50px;
-    color:white; 
+    color:#F0C07A; 
+    background-color: #333
 }
 
-.groupeX h2{ 
-    font-size:30px;
-    margin-right: 600px;
-    color:orange; 
+.header h2{ 
+    color:aqua; 
+	margin-left: 30px;
 }
 
-.groupeX h3{
+.header h3{
 	color:orange;
     font-size:20px;
     background-color: #17202A;
     margin-right:800px;
-}
-
-.groupeXY{
-    border: 2px solid #333;
-	padding: 10px;
-	margin-bottom: 20px;
-	background-image:url("../Images/Background.jpg");
-	font-size: 20px;; 
-}
-
-.groupeXY h2{
-	color:aqua;
-	margin-left: 30px;
-	}
-
-.groupeXY p{
-	margin-left: 20px;
-	font-size:2Opx;
-    color:#F0C07A;
-    background-color: #333
-}
-
-.groupeXY h1{
-	color:#F0C07A;
-    background-color: #333;
 }
 
 .contact{
@@ -142,11 +117,11 @@ h2 {
     margin-right:800px;
 }
 
-table{
-	border-collapse: collapse;
-}
-
-tr{
-	border: 1px solid wheat;
-	padding: 10px;
+table img {
+    max-width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 5px;
 }

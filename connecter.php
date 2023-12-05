@@ -1,37 +1,48 @@
-<?php session_start();
-    
-    if ($_SERVER["REQUEST_METHOD"] == "POST"){
+<?php
+require("bd.php");
 
-        $mail = $_POST["mail"];
-        $mdp =$_POST["mdp"];
+$mailc = isset($_POST['mailc']) ? $_POST['mailc'] : '';
+$mdp1c = isset($_POST['mdp1c']) ? $_POST['mdp1c'] : '';
 
-        if($mail != "" && $mdp != ""){
-            require "./bd.php";
-            $bdd = getBD();
+$bdd = getBD();
 
-            $prepare = "SELECT * FROM clients WHERE mail = :mail AND mdp = :mdp";
-  
-            $req = $bdd->prepare($prepare);
+session_start();
 
-            $req->execute(array('mail' => $mail, 'mdp' => $mdp));
+$query = "SELECT * FROM clients WHERE mail = :mail";
+$stmt = $bdd->prepare($query);
+$stmt->bindParam(':mail', $mailc);
+$stmt->execute();
+$row = $stmt->fetch();
 
-            
+if ($row) {
+    $mdp_hache = $row['mdp'];
+    if (password_verify($mdp1c, $mdp_hache)) {
+        $_SESSION['client'] = array(
+            'id_client' => $row['id_client'],
+            'nom' => $row['nom'],
+            'prenom' => $row['prenom'],
+            'adresse' => $row['adresse'],
+            'numero' => $row['numero'],
+            'mail' => $row['mail'],
+        );
 
-            if ($req -> rowCount() >0 ){
-                $user = $req->fetch();
-
-                if(password_verify($mdp, $user["mdp"]))
-                $_SESSION['client'] = $user;
-                header("Location: ./index.php");
-                exit();
-            }
-
-            else{
-                $error_msg = "Mail adress or password incorrect !";
-                header("Location: ./connexion.php");
-            }
+        $response = array(
+            'success' => true,
+            'message' => 'Login successful',
+        );
+        echo json_encode($response);
+    } else {
+        $response = array(
+            'success' => false,
+            'message' => 'Incorrect password',
+        );
+        echo json_encode($response);
     }
+} else {
+    $response = array(
+        'success' => false,
+        'message' => 'User not found',
+    );
+    echo json_encode($response);
 }
-        
-
-    ?>
+?>

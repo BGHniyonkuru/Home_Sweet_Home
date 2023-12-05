@@ -12,13 +12,14 @@
         
     </head>
 
-    <body class="groupeXY">
+    <body class="header">
         <h1>Home Sweet Home - Basket</h1>
 
         <header>
             <nav>
                 <ul>
                     <li><a href="../index.php">Homepage</a></li>
+                    <li><a href="./commande.php">Order</a></li>
                     <li><a href="../Contact/contact.html">Contact</a></li>
                 </ul>
             </nav>
@@ -33,16 +34,18 @@
         <th>Total amount (€)</th>
     </tr>
     <?php
-    require "../bd.php";
     if (isset($_SESSION['panier']) && is_array($_SESSION['panier']) && !empty($_SESSION['panier']) ){
+        require "../bd.php";
         $bdd = getBD();
         $totalMontant = 0;
+        echo '<h1>Votre Panier</h1>';
+            echo '<table border="1">';
+            echo '<tr><th>ID Article</th><th>Nom</th><th>Prix unitaire</th><th>Quantité</th><th>Prix total</th></tr>';
 
         foreach ($_SESSION['panier'] as $ligne) {
             if (is_array($ligne)){
                 $id_art = $ligne['id_art']; // L'ID de l'article du panier
-                $quantity = $ligne['quantity'];
-
+                $quantity = $ligne['quantite'];
                 $prepare = "SELECT nom, prix FROM articles WHERE id_art = :id_art";
                 $rep = $bdd->prepare($prepare);
                 $rep->bindParam(':id_art', $id_art, PDO::PARAM_INT);
@@ -78,5 +81,6 @@
     ?>
 </table>
 
+<a href="commande.php"><button> Passer commande</button></a>
     </body>
 </html>
