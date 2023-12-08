@@ -28,7 +28,7 @@ if ($row) {
 
         $response = array(
             'success' => true,
-            'message' => 'Login successful',
+        
         );
         echo json_encode($response);
     } else {

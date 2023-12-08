@@ -125,3 +125,27 @@ table img {
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     padding: 5px;
 }
+
+iframe{
+	width: 853px;
+	height: 480px;
+	border: 1px #999 solid;
+}
+
+textarea{
+	width: 850px;
+	height: 80px;
+	background-color: #fff;
+	resize: none;
+}
+
+.button{
+	width: 100px;
+	height: 30px;
+	background-color: #282828;
+	border: none;
+	color: #fff;
+	font-family: arial;
+	font-weight: 400px;
+	cursor: pointer;
+}

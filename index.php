@@ -29,7 +29,7 @@
           echo '<li><a href="./Articles/historique.php">History</a></li>';
           echo '<li> Bonjour ' . $_SESSION["client"]["prenom"] . ' ' . $_SESSION["client"]["nom"] . '</li>';
         } else {
-          echo  '<li><a href="./new_client.php">New client Survey</a></li>';
+          echo  '<li><a href="./new_client.php">Create an account</a></li>';
           echo '<li><a href="./connexion.php">Log in</a></li>';
         }
         ?>
@@ -38,8 +38,6 @@
   </header>
 
   <main>
-    <a href="./Articles/article.php?id_art=1">Meal</a>
-
     <img src="./Images/Home_sweet_home.jpg" alt="Welcome!">
     <img src="./Images/happy_meal.jpg" alt="Meals with your beloved ones">
 

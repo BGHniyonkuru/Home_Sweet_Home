@@ -19,7 +19,7 @@
             <nav>
                 <ul>
                     <li><a href="../index.php">Homepage</a></li>
-                    <li><a href="./commande.php">Order</a></li>
+                    <li><a href="historique.php">History</a></li>
                     <li><a href="../Contact/contact.html">Contact</a></li>
                 </ul>
             </nav>
